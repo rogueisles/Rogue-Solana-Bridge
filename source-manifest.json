@@ -1,0 +1,29 @@
+{
+  "solanaExecutableSha256": "b5744350d710b6ac8beb293d8994610e84fa9060177b67bdef1cb0b922e3d1fc",
+  "solanaExecutableBytes": 147496,
+  "solanaVerifierHash": "77f23ef35a43c3f8a3be7f31ff73de1284aed60436eccbd50097ee1a1a8a851c",
+  "files": {
+    ".gitignore": "59ffb973d73dd42c35b2fd6150bb848ac49c5e32bdf06aca9752f6ebcd1b6dd7",
+    "Cargo.lock": "a2f18849759fcd65f947d93079cae0144effa959d4f189368cee85df4fe7a460",
+    "Cargo.toml": "f8ad454618eaca7200f86c6b36f81478fac51241f544bf9f4258196f4a6f08f4",
+    "LICENSE": "400864053eed27c324ad5d5076e7421bb07ca53fba557eba1828dfcf24494c10",
+    "README.md": "a3ec2853256931dcd2a4f12116932992b6fa1ece62bf831a2574a06fac55ecda",
+    "combined/Cargo.lock": "8c11a427331163761132e9427d5472f60c4a9ce07ae8135a87cecd3b7f8c3dce",
+    "combined/Cargo.toml": "45e03e7b2734d2ad04d98d844b9445e1f1f24e7fd1b683d710c0ba9797174aad",
+    "combined/src/lib.rs": "486a1f95918c323357adc2f20f37e255a91267d1c4e0cd0a5322a8f5065e5e3e",
+    "native/compiler-input.json": "6beccb9fa19032e93554116f0f4b9b0ebcc88010a7dd3475ae98a9f3a1f08d99",
+    "native/contracts/NativeRgnEscrow.sol": "33e4f308ec3ac5fb3a4957101404fe5fb3c4f3141da461db62d1b40fec29ceeb",
+    "native/contracts/QuorumRgnReserve.sol": "8dec6550ab556c4f34c378e903b360dc18e312396468e9070cfc61d9c682e0d2",
+    "reserve/Cargo.lock": "4a4243886c55f90c5c103b50fd79c6668796ad53e50f453626160c49213327eb",
+    "reserve/Cargo.toml": "705eddf86c5f0ca02d26c81cd8579c2008c97710429db2858b99895ad53e0220",
+    "reserve/src/lib.rs": "f542a22810035c5ea2743d67de7263049c4b23e821d9aac5522e9d31329c3bb1",
+    "src/lib.rs": "ae0661ef2ed8644787ea8b5b9081143f7c811cb5b578b5c67abac347248747c6",
+    "verification/.dockerignore": "8c98705150d8d5fc07e7c03e9b21a49fd86c6698ad77a0ab20483758394d9408",
+    "verification/Dockerfile.verifiable": "900576de0df976b280b1e56a220485a852835717bdc130fb373b442669596053",
+    "verification/README.md": "40a729132f500c5f74f32903f1abecd69293815d75b967ce90072921885ad315",
+    "verification/image_setup.py": "0301195dae6ed1587c7419381ce5de6e042b3e3f6b9ed70c1cca3adc49bbb82a",
+    "verification/pins.py": "83a7f2ee8284ba4840e573e5ce75913fe8972a94723e1e29123f3657fdfda494",
+    "verification/prepare_context.py": "98a6eee69f2bc4d5cda72ad1884c0accd9b36ca239999a6134d537b9ae71ee8f",
+    "verification/run_rebuild_v2.py": "0af1721eb4947f4e88a0e2ec1c9e77e5575e007d4aabcc2fdfe7a611b6ff4884"
+  }
+}

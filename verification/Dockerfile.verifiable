@@ -1,0 +1,24 @@
+ARG BASE_IMAGE=solanafoundation/solana-verifiable-build@sha256:12fd4c0a0790f0fc41ef74b0cdb6bccc167ba6137eb1adb749bac649481c86bd
+FROM ${BASE_IMAGE} AS prepared
+USER root
+COPY downloads/solana-release-x86_64-unknown-linux-gnu.tar.bz2 /rgn-downloads/solana-release-x86_64-unknown-linux-gnu.tar.bz2
+COPY downloads/platform-tools-linux-x86_64.tar.bz2 /rgn-downloads/platform-tools-linux-x86_64.tar.bz2
+COPY pins.py image_setup.py /rgn-build/
+COPY public-source/solana /rgn-public-source
+RUN python3 /rgn-build/image_setup.py
+
+FROM ${BASE_IMAGE}
+USER root
+ENV CARGO_HOME=/var/tmp/rgn-spl-combined-staging-20261123/cargo-home
+ENV RUSTUP_HOME=/var/tmp/rgn-spl-combined-staging-20261123/cache/rustup
+ENV CARGO_TARGET_DIR=/var/tmp/rgn-spl-combined-staging-20261123/solana/combined/target
+ENV SOLANA_PLATFORM_TOOLS_DIR=/var/tmp/rgn-spl-combined-staging-20261123/build-tools
+ENV CARGO_NET_OFFLINE=true
+ENV CARGO_BUILD_JOBS=1
+ENV CARGO_INCREMENTAL=0
+ENV CARGO_PROFILE_RELEASE_OPT_LEVEL=s
+ENV PATH=/var/tmp/rgn-spl-combined-staging-20261123/build-tools/v1.57/platform-tools/rust/bin:/var/tmp/rgn-spl-combined-staging-20261123/tools/solana-release/bin:${PATH}
+COPY --from=prepared /var/tmp/rgn-spl-combined-staging-20261123 /var/tmp/rgn-spl-combined-staging-20261123
+COPY --from=prepared /rgn-build /rgn-build
+COPY run_rebuild_v2.py /rgn-build/run_rebuild.py
+WORKDIR /var/tmp/rgn-spl-combined-staging-20261123/solana

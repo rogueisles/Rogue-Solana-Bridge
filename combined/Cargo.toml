@@ -1,0 +1,24 @@
+[package]
+name = "rgn-spl-bridge"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+[lib]
+name = "rgn_spl_bridge"
+crate-type = ["cdylib"]
+
+[dependencies]
+solana-program = "=2.3.0"
+rgn-spl-escrow = { path = "..", features = ["no-entrypoint"] }
+rgn-spl-reserve = { path = "../reserve", features = ["no-entrypoint"] }
+
+[profile.release]
+opt-level = "s"
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+
+[package.metadata.solana]
+tools-version = "v1.57"

@@ -1,0 +1,25 @@
+[package]
+name = "rgn-spl-reserve"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
+
+[dependencies]
+solana-program = "=2.3.0"
+spl-token = { version = "=8.0.0", features = ["no-entrypoint"] }
+rgn-spl-escrow = { path = "..", features = ["no-entrypoint"] }
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+
+[package.metadata.solana]
+tools-version = "v1.57"

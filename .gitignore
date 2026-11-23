@@ -1,0 +1,7 @@
+/target/
+/combined/target/
+/reserve/target/
+/downloads/
+/private*/
+*.key
+.env
