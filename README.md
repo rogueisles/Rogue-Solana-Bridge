@@ -46,7 +46,19 @@ For Solidity, compile `native/compiler-input.json` using solc 0.8.23 with optimi
 
 ## Deployment
 
-Public bridge access remains disabled during deployment and real transaction checks. Deployment addresses and transaction references will be published after their on-chain verification. Source verification establishes that published source matches deployed code. It is separate from a security audit.
+The contracts below are deployed on mainnet. The Solana program has no upgrade authority. Public swaps remain disabled while account initialization, production service qualification and limited mainnet swap and refund tests are completed.
+
+| Network | Contract | Address |
+| --- | --- | --- |
+| Rogue Network | NativeRgnEscrow | `0x65D12f35ea4B09d7d1826e331494e319d165008b` |
+| Rogue Network | QuorumRgnReserve | `0x5382180b0D608433e586DcF7a388Fe79cf84cBA1` |
+| Solana | Combined escrow and reserve program | [E9UThbDmqpjFMbkVWqJXzgGrg5BYmwogtoFWs5D6RxRs](https://solscan.io/account/E9UThbDmqpjFMbkVWqJXzgGrg5BYmwogtoFWs5D6RxRs) |
+
+The verified source is pinned to [commit 0448bd36](https://github.com/rogueisles/Rogue-Solana-Bridge/tree/0448bd36af1f279538f684a3a5cbbf4eddaac723). The [independent Solana verification record](https://verify.osec.io/job/281f7459-667a-4dc5-ae55-c2989f61884a) confirms that the published build matches the on-chain executable.
+
+The public [verification build image](https://hub.docker.com/r/roguenetwork/solana-bridge-build) is `roguenetwork/solana-bridge-build:20261123-v1.57`, with immutable digest `sha256:8a912ba4fda10cb49350d7b63b04de1e95a7f8d671f6c808f3a085dd85fa0875`.
+
+Source verification establishes that published source matches deployed code. It is separate from a security audit.
 
 ## License
 
